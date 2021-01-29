@@ -1,6 +1,6 @@
 <?php
 	include_once 'config.php';
-	
+
 	$result = mysqli_query($mysqli, "SELECT * FROM country");
 ?>
 
@@ -9,22 +9,27 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="bootstrap.min.css">
 	<title>Homepage</title>
 </head>
 <body>
-	<h1><?php echo "Countries";?></h1>
-	<a href="add.html">Add New Data</a><br/><br/>
+<div class="container">
+	<h1 class="text-center"><?php echo "Countries";?></h1><br/>
+	<p class="text-right"><a href="add.html">Add New Data</a></p>
 	
-	<table>
-		<tr bgcolor='#cccccc'>
-			<td>ISO</td>
-			<td>ISO3</td>
-			<td>Name</td>
-			<td>Numeric Code</td>
-			<td>Phone Code</td>
-			<td>Created</td>
-			<td>Update</td>
+	<div class="table-responsive-sm">
+	<table class="table text-center table-striped table-sm">
+		<thead class="thead-dark">
+		<tr>
+			<th>ISO</th>
+			<th>ISO3</th>
+			<th>Name</th>
+			<th>Numeric Code</th>
+			<th>Phone Code</th>
+			<th>Created</th>
+			<th>Update</th>
 		</tr>
+		</thead>
 		
 		<?php
 
@@ -40,8 +45,9 @@
 			echo "</tr>";
 		}
 		?>
-		
 	</table>
+	</div>
+</div>
 	
 </body>
 </html>

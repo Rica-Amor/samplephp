@@ -3,11 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" >
-	<title>Homepage</title>
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<title>Add Script</title>
 </head>
 <body>
-	<form action="add.php" method="post" name="form1">
-		<table width="25%" border="0">
+<div class="container">
+	<div class="row  mt-5">
+	<form align="center" style="margin: auto" action="add.php" method="post" name="form1">
+		<table class="table text-center table-dark table-borderless table-responsive mt-5" border="0" >
 			<tr>
 				<td>ISO</td>
 				<td><input type="text" name="iso"></td>
@@ -34,7 +37,8 @@
 			</tr>
 		</table>
 	</form>
-
+	</div>
+</div>
 
 </body>
 </html>

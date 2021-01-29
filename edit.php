@@ -46,7 +46,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" >
-	<title>Homepage</title>
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<title>Edit Data</title>
 </head>
 <body>
 
@@ -66,8 +67,10 @@
 	}
 ?>
 
-	<form name="form1" method="post" action="edit.php">
-		<table>
+<div class="container">
+	<div class="row  mt-5">
+	<form align="center" style="margin: auto" name="form1" method="post" action="edit.php">
+		<table class="table text-center table-dark table-borderless table-responsive mt-5" border="0" >
 			<tr>
 				<td>ISO</td>
 				<td><input type="text" name="iso" value="<?php echo $iso;?>"></td>
@@ -93,6 +96,8 @@
 			</tr>
 		</table>
 	</form>
+	</div>
+</div>
 
 
 </body>
