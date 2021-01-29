@@ -17,6 +17,7 @@
 </head>
 <body>
 	<h1><?php echo "Countries"; ?><h1>
+	<a href="add.html">Add New Data</a><br/><br/>
 	
 	<table>
 		<tr bgcolor='#cccccc'>
