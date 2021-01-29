@@ -12,7 +12,7 @@
 	<title>Homepage</title>
 </head>
 <body>
-	<h1><?php echo "Countries"; ?><h1>
+	<h1><?php echo "Countries";?></h1>
 	<a href="add.html">Add New Data</a><br/><br/>
 	
 	<table>
@@ -36,7 +36,7 @@
 			echo "<td>".$res['numcode']."</td>";
 			echo "<td>".$res['phonecode']."</td>";
 			echo "<td>".$res['created_at']."</td>";
-			echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a>";
+			echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete this record?')\">Delete</a></td>";
 			echo "</tr>";
 		}
 		?>
