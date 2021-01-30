@@ -1,58 +1,17 @@
-<?php
-	include_once 'config.php';
-
-	
-	if( isset($_POST['update']))
-	{
-		$id = mysqli_real_escape_string($mysqli, $_POST['id']);
-		$iso = mysqli_real_escape_string($mysqli, $_POST['iso']);
-		$iso3 = mysqli_real_escape_string($mysqli, $_POST['iso3']);
-		$nicename = mysqli_real_escape_string($mysqli, $_POST['nicename']);
-		$numcode = mysqli_real_escape_string($mysqli, $_POST['numcode']);
-		$phonecode = mysqli_real_escape_string($mysqli, $_POST['phonecode']);
-		
-		if( empty($iso) || empty($iso3) || empty($nicename) || empty($numcode) || empty($phonecode)){
-			
-			if(empty($iso)){
-				echo "<font color='red'>ISO field is empty.</font><br/>";
-			}
-			
-			if(empty($iso3)){
-				echo "<font color='red'>ISO3 field is empty.</font><br/>";
-			}
-			
-			if(empty($nicename)){
-				echo "<font color='red'>Name field is empty.</font><br/>";
-			}
-			
-			if(empty($numcode)){
-				echo "<font color='red'>Numeric Code field is empty.</font><br/>";
-			}
-			
-			if(empty($phonecode)){
-				echo "<font color='red'>Phone Code field is empty.</font><br/>";
-			}
-			echo "<br/><a href='javascript:self.history.back();'>Go Back</a>";
-			
-		}else{
-			$result = mysqli_query($mysqli, "UPDATE country SET iso='$iso', iso3='$iso3', nicename='$nicename', numcode='$numcode', phonecode='$phonecode' WHERE id=$id");
-			header("Location: edit.html");
-		}
-	}
-?>
-
 <?DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" >
 	<link rel="stylesheet" href="bootstrap.min.css">
-	<title>Edit Data</title>
+	<title></title>
 </head>
 <body>
 
 <?php
+	include_once 'config.php';
 	$id = $_GET['id'];
+	
 	
 	$result = mysqli_query($mysqli,"SELECT * from country where id=$id");
 
@@ -69,7 +28,7 @@
 
 <div class="container">
 	<div class="row  mt-5">
-	<form align="center" style="margin: auto" name="form1" method="post" action="edit.php">
+	<form align="center" style="margin: auto" name="form1" method="post" action="edit2.php">
 		<table class="table text-center table-dark table-borderless table-responsive mt-5" border="0" >
 			<tr>
 				<td>ISO</td>
@@ -99,6 +58,5 @@
 	</div>
 </div>
 
-
 </body>
-</html>			
+</html>	

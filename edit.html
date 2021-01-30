@@ -1,15 +1,41 @@
-<?DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" >
-	<link rel="stylesheet" href="bootstrap.min.css">
-	<title></title>
-</head>
-<body>
+<?php
+	include_once 'config.php';
 
-<p><font color='green'>Data Updated Successfully</font><br/><a href='index.php'>View Result</a></p>
-
-
-</body>
-</html>			
+	
+	if( isset($_POST['update']))
+	{
+		$id = mysqli_real_escape_string($mysqli, $_POST['id']);
+		$iso = mysqli_real_escape_string($mysqli, $_POST['iso']);
+		$iso3 = mysqli_real_escape_string($mysqli, $_POST['iso3']);
+		$nicename = mysqli_real_escape_string($mysqli, $_POST['nicename']);
+		$numcode = mysqli_real_escape_string($mysqli, $_POST['numcode']);
+		$phonecode = mysqli_real_escape_string($mysqli, $_POST['phonecode']);
+		
+		if( empty($iso) || empty($iso3) || empty($nicename) || empty($phonecode)){
+			
+			
+			if(empty($iso)){
+				echo "<font color='red'>ISO field is empty.</font><br/>";
+			}
+			
+			if(empty($iso3)){
+				echo "<font color='red'>ISO3 field is empty.</font><br/>";
+			}
+			
+			if(empty($nicename)){
+				echo "<font color='red'>Name field is empty.</font><br/>";
+			}
+			
+			if(empty($phonecode)){
+				echo "<font color='red'>Phone Code field is empty.</font><br/>";
+			}
+			echo "<br/><a href='javascript:self.history.back();'>Go Back</a>";
+			
+		}else{
+			$result = mysqli_query($mysqli, "UPDATE country SET iso='$iso', iso3='$iso3', nicename='$nicename', numcode='$numcode', phonecode='$phonecode' WHERE id=$id");
+			echo "<font color='green'>Data Updated Successfully";
+			echo "<br/><a href='index.php'>View Result</a>";
+		}
+	}
+?>
+		

@@ -41,7 +41,7 @@
 			echo "<td>".$res['numcode']."</td>";
 			echo "<td>".$res['phonecode']."</td>";
 			echo "<td>".$res['created_at']."</td>";
-			echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete this record?')\">Delete</a></td>";
+			echo "<td><a href=\"edit.html?id=$res[id]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete this record?')\">Delete</a></td>";
 			echo "</tr>";
 		}
 		?>
