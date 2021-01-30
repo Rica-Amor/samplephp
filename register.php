@@ -94,7 +94,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST'){
  <link rel="stylesheet" href="bootstrap.min.css">
   <title>Create An Account</title>
 </head>
-<body class="bg-primary">
+<body class="bg-secondary">
 <div class="container">
   <div class="row">
     <div class="col-md-6 mx-auto">
