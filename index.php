@@ -1,4 +1,10 @@
 <?php
+ session_start();
+
+  if( !isset($_SESSION['email']) || empty($_SESSION['email'])){
+    header('location: login.php');
+    exit;
+  }
 	include_once 'config.php';
 
 	$result = mysqli_query($mysqli, "SELECT * FROM country");
@@ -14,7 +20,10 @@
 </head>
 <body>
 <div class="container">
-	<h1 class="text-center"><?php echo "Countries";?></h1><br/>
+	
+		<h1 class="text-center"><?php echo "Countries";?></h1><br/>
+		<div style='text-align:right'><p><a href="logout.php" class="btn btn-danger">Logout</a></p></div>
+	
 	<p class="text-right"><a href="add.html">Add New Data</a></p>
 	
 	<div class="table-responsive-sm">
